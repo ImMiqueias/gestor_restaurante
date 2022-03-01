@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,16 +17,16 @@
         <div class="lista-previsoes">
             <div class="item-previsao">
                 <p class="faturamento"><?= 'R$ ' . number_format($estoque->ingredientes()->getValorEstoque(), 2, ',') ?></p>
-                <p>Valor de Estoque</p>
+                <p style="text-align: center;">Valor de Estoque</p>
             </div>
 
             <div class="item-previsao">
                 <p class="faturamento">R$ 0,00</p>
-                <p>Faturamento de Receitas</p>
+                <p style="text-align: center;">Faturamento</p>
             </div>
             <div class="item-previsao">
-            <p class="lucro-liquido">R$ 0,00</p>
-                <p>Lucro de Receitas</p>
+            <p class="lucro-liquido"><?= 'R$ ' . $estoque->vendas()->getLucroTotal() ?></p>
+                <p style="text-align: center;">Lucro Atual</p>
             </div>
         </div> <!-- lista-previsoes -->
 
@@ -80,7 +80,7 @@
                             <tr>
                                 <td><a href="javascript:mostrarPrato('<?= $prato['id'] ?>')"><?= $prato['nome'] ?></a></td>
                                 <td><?= 'R$ ' . number_format($prato['preco'], 2, ',') ?></td>
-                                <td><?= 'R$ ' . $prato['lucro'] ?></td>
+                                <td><?= 'R$ ' . number_format($prato['lucro'], 2, ',') ?></td>
                                 <td><a href="javascript:registrarVenda(<?= $prato['id'] ?>, '<?= $prato['nome'] ?>')"><button class="botao-registrar">Registrar Venda</button></a></td>
                             </tr>
                         <?php endforeach ?>

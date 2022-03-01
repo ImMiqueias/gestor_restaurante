@@ -64,6 +64,17 @@ INSERT INTO `pratos` (`id`, `nome`, `preco`, `ingredientes`) VALUES
 (2, 'Cheeseburguer Genérico', 45, '1,500,2,150,3,300');
 
 --
+-- Estrutura da tabela `vendas`
+--
+
+CREATE TABLE `vendas` (
+  `id` int(11) NOT NULL,
+  `data` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `prato` varchar(32) NOT NULL,
+  `lucro` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -77,6 +88,12 @@ ALTER TABLE `ingredientes`
 -- Índices para tabela `pratos`
 --
 ALTER TABLE `pratos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `vendas`
+--
+ALTER TABLE `vendas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -94,6 +111,13 @@ ALTER TABLE `ingredientes`
 --
 ALTER TABLE `pratos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
+--
+-- AUTO_INCREMENT de tabela `vendas`
+--
+ALTER TABLE `vendas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -147,6 +147,7 @@ header {
     padding: 20px;
     border-radius: 7px;
     background-color: white;
+    width: 200px;
 }
 .item-previsao .faturamento {
     color: #22a1f5;
@@ -401,4 +402,10 @@ header {
     padding: 5px;
     margin: 10px;
 
+}
+.success-msg {
+    color: #4F8A10;
+}
+.error-msg {
+    color: #D8000C;
 }

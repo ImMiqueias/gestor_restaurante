@@ -56,7 +56,7 @@ class Ingrediente extends Database{
         $stmt->execute();
         if (!empty($stmt->fetchAll())) {
             if($this->verificaLigacoesComReceitas($id)) {
-                echo "Existem receitas ligadas à esse ingrediente";
+                echo "<p class='error-msg'>Existem receitas ligadas à esse ingrediente</p>";
                 return;
             }
             $stmt = 'DELETE FROM ingredientes WHERE id = :id';

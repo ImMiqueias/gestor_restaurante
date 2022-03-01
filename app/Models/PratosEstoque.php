@@ -57,7 +57,7 @@ class PratosEstoque {
         $this->custo_pratos += $custo;
         $this->faturamento_estoque += $preco_prato;
         $this->lucro_estoque += ($preco_prato - $custo);
-        return number_format($preco_prato - $custo, 2, ',');
+        return $this->lucro_estoque;
     }
     
     public function getPratos() {

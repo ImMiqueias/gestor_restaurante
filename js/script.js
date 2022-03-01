@@ -2,7 +2,7 @@ function exibeMsgModal(msg, reload) {
     let modal = document.getElementById("myModal");
     let modal_content = document.getElementById("modal-content");
 
-    modal_content.innerHTML = "<p>" + msg + "</p>";
+    modal_content.innerHTML = "<p class='success-msg'>" + msg + "</p>";
     modal.style.display = "block";
     window.onclick = function(event) {
         if(event.target == modal) {
@@ -80,7 +80,7 @@ function excluirIngrediente(id, nome) {
     let modal = document.getElementById("modal-exclusao");
     let modal_content = document.getElementById("modal-exclusao-content");
 
-    modal_content.innerHTML = "<p> Excluir " + nome + " ? </p><br>";
+    modal_content.innerHTML = " <p style='color:red'>Excluir </p><p style='color:green'>" + nome +"</p><br>";
     modal_content.innerHTML += "<button id='excluir-ingrediente' class='botao-excluir'>Excluir</button>";
     modal.style.display = "block";
 
